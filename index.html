@@ -250,7 +250,11 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 .chat .btns span { border: 1px solid var(--accent); color: var(--accent); border-radius: var(--r-md); padding: .15rem .55rem; }
 .hero-stack .chat { position: absolute; right: -10px; bottom: -34px; width: 236px; z-index: 3; box-shadow: var(--shadow-glow); }
 .chat-m { display: none; }
-.chat-inline { margin-top: auto; max-width: 340px; }
+.chat-inline { margin-top: auto; width: 100%; max-width: 560px; padding: 1.5rem; gap: 1rem; font-size: 1.15rem; border-radius: var(--r-lg); }
+.chat-inline .cap { font-size: .95rem; }
+.chat-inline .m { padding: .9rem 1.2rem; border-radius: 16px; }
+.chat-inline .btns { gap: .55rem; }
+.chat-inline .btns span { padding: .4rem 1.1rem; font-size: 1.05rem; }
 
 /* единственный сценарий движения: первый экран и диалог бота играют один раз при загрузке */
 @keyframes rise { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
