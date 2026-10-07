@@ -1,0 +1,6 @@
+﻿.env
+*.csv
+__pycache__/
+Thumbs.db
+.DS_Store
+img/src/
