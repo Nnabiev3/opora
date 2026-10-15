@@ -118,6 +118,10 @@ img { max-width: 100%; }
 .btn-dark { background: #0b0f06; color: #fff; }
 .btn-dark svg { fill: currentColor; }
 .btn-dark:hover { background: #1b2410; transform: translateY(-2px); }
+.btn-outline { border-color: var(--text); color: var(--text); background: transparent; }
+.btn-outline svg { fill: currentColor; }
+.btn-outline:hover { background: var(--text); color: var(--bg); transform: translateY(-2px); }
+.btn-row { display: flex; flex-wrap: wrap; gap: .8rem; }
 :root[data-theme="dark"] .btn-dark { background: var(--lime); color: var(--on-lime); }
 .btn-sm { min-height: 2.75rem; padding: 0 1.2rem; font-size: .92rem; }
 .btn:active { transform: scale(.97); }
@@ -443,7 +447,10 @@ footer { background: var(--hero); color: #c9d2c0; padding: 3.5rem 0 2.5rem; bord
           <span class="badge"><svg aria-hidden="true"><use href="#i-spark"/></svg>Бот для заявок</span>
           <h2>Заявки приходят <span class="hl">прямо в ваш Telegram</span></h2>
           <p>Клиент нажимает «Старт», выбирает нужное на кнопках и оставляет имя и телефон. Заявка приходит владельцу в чат. На частые вопросы (часы работы, цены, адрес) бот отвечает сам.</p>
-          <a class="btn btn-dark" href="https://t.me/mo_on_rise" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Заказать бота</a>
+          <div class="btn-row">
+            <a class="btn btn-dark" href="https://t.me/mo_on_rise" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Заказать бота</a>
+            <a class="btn btn-outline" href="https://t.me/OporaDemoBot" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Открыть демо-бота</a>
+          </div>
         </div>
       </div>
 
