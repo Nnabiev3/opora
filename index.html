@@ -119,25 +119,25 @@ img { max-width: 100%; }
 .btn-dark svg { fill: currentColor; }
 .btn-dark:hover { background: #1b2410; transform: translateY(-2px); }
 :root[data-theme="dark"] .btn-dark { background: var(--lime); color: var(--on-lime); }
-.btn-sm { min-height: 2.6rem; padding: 0 1.2rem; font-size: .92rem; }
+.btn-sm { min-height: 2.75rem; padding: 0 1.2rem; font-size: .92rem; }
 .btn:active { transform: scale(.97); }
 
 /* шапка: плавающая «таблетка» */
 .site-header { position: fixed; top: .9rem; left: 0; right: 0; z-index: 40; pointer-events: none; }
 .nav-pill { pointer-events: auto; max-width: 1120px; margin: 0 auto; width: calc(100% - 2rem); display: flex; align-items: center; gap: 1.2rem; padding: .5rem .55rem .5rem 1.1rem; border-radius: var(--r-pill); background: rgba(8, 12, 6, .78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(160, 206, 20, .22); color: #fff; }
-.logo { display: inline-flex; align-items: center; gap: .6rem; min-height: 2.75rem; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; }
+.logo { display: inline-flex; align-items: center; gap: .6rem; min-height: 2.75rem; min-width: 2.75rem; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; }
 .logo svg { width: 2.1rem; height: 2.1rem; fill: none; stroke: var(--lime); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(160, 206, 20, .5)); }
 .nav-links { display: flex; gap: .3rem; margin: 0 auto; }
 .nav-links a { padding: .55rem .95rem; border-radius: var(--r-pill); color: #dfe7d4; text-decoration: none; font-size: .95rem; font-weight: 500; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .nav-links a:hover { background: rgba(255, 255, 255, .1); color: #fff; }
 .nav-actions { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
-.theme-toggle { width: 2.6rem; height: 2.6rem; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); background: transparent; color: #fff; cursor: pointer; transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease); }
+.theme-toggle { width: 2.75rem; height: 2.75rem; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); background: transparent; color: #fff; cursor: pointer; transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease); }
 .theme-toggle:hover { transform: rotate(18deg); border-color: var(--lime); }
 .theme-toggle svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .theme-toggle .sun { display: var(--sun-display); }
 .theme-toggle .moon { display: var(--moon-display); }
 .theme-toggle[hidden] { display: none; }
-.nav-actions .btn { min-height: 2.6rem; padding: 0 1.1rem; font-size: .92rem; }
+.nav-actions .btn { min-height: 2.75rem; padding: 0 1.1rem; font-size: .92rem; }
 
 /* первый экран */
 .hero { position: relative; isolation: isolate; overflow: hidden; background: var(--hero); color: #fff; text-align: center; padding: 10rem 0 5.5rem; }
@@ -226,14 +226,17 @@ h3 { font-size: 1.3rem; line-height: 1.25; letter-spacing: -.015em; font-weight:
 .band::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(55% 60% at 50% 0%, rgba(160, 206, 20, .22), transparent 70%); }
 .band h2 .hl { color: var(--lime); }
 .band .sec-head p { color: #b9c3b0; }
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; list-style: none; padding: 0; }
-.step { position: relative; text-align: center; padding: 0 .5rem; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; list-style: none; padding: 0; width: min(1240px, calc(100vw - 3rem)); margin-left: 50%; transform: translateX(-50%); }
+.step { position: relative; text-align: center; padding: 0; }
 .step .ic { width: 5rem; height: 5rem; margin: 0 auto 1.3rem; display: grid; place-items: center; border-radius: 50%; background: #1b2018; border: 1px solid rgba(160, 206, 20, .25); color: var(--lime); }
 .step .ic svg { width: 2rem; height: 2rem; }
 .step:not(:last-child)::after { content: ""; position: absolute; top: 2.5rem; left: calc(50% + 3.4rem); width: calc(100% - 6.8rem); border-top: 2px dashed rgba(255, 255, 255, .28); }
 .step .n { font-size: .85rem; font-weight: 700; color: var(--lime); letter-spacing: .08em; }
 .step h3 { margin: .3rem 0 .6rem; color: #fff; }
-.step p { color: #b9c3b0; font-size: .96rem; }
+.step p { max-width: 21rem; margin: 0 auto; color: #b9c3b0; font-size: .94rem; line-height: 1.65; text-align: center; }
+.step h3 { text-wrap: balance; }
+.step p span { display: block; text-wrap: balance; }
+.step p span + span { margin-top: .15rem; }
 
 /* договор и состав */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
@@ -262,13 +265,13 @@ footer { background: var(--hero); color: #c9d2c0; padding: 3.5rem 0 2.5rem; bord
 .foot { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 2rem; }
 .foot h4 { color: #fff; font-size: .95rem; margin-bottom: .9rem; }
 .foot ul { list-style: none; padding: 0; display: grid; gap: .1rem; font-size: .95rem; }
-.foot a { display: inline-block; padding: .45rem 0; color: #c9d2c0; text-decoration: none; }
+.foot a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0; color: #c9d2c0; text-decoration: none; }
 .foot a:hover { color: var(--lime); }
 .foot .logo { display: inline-flex; align-items: center; gap: .75rem; min-height: 0; padding: 0; font-size: 1.5rem; }
 .foot .logo svg { width: 2.9rem; height: 2.9rem; }
 .foot .about { margin-top: 1rem; max-width: 30ch; font-size: .95rem; }
 .socials { display: flex; gap: .6rem; margin-top: 1.2rem; }
-.socials a { width: 2.6rem; height: 2.6rem; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); color: #fff; font-size: .72rem; font-weight: 800; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
+.socials a { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); color: #fff; font-size: .72rem; font-weight: 800; transition: background var(--dur) var(--ease), color var(--dur) var(--ease); }
 .socials a:hover { background: var(--lime); color: var(--on-lime); }
 .socials svg { width: 1.2rem; height: 1.2rem; fill: currentColor; }
 .copy-line { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, .08); font-size: .88rem; color: #8f9a87; }
@@ -509,25 +512,25 @@ footer { background: var(--hero); color: #c9d2c0; padding: 3.5rem 0 2.5rem; bord
           <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>
           <div class="n" aria-hidden="true">01</div>
           <h3>Заявка</h3>
-          <p>Обсуждение задачи в Telegram или MAX. Технические знания не требуются.</p>
+          <p><span>Обсуждение задачи в&nbsp;Telegram или&nbsp;MAX.</span> <span>Технические знания не&nbsp;требуются.</span></p>
         </li>
         <li class="step">
           <span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>
           <div class="n" aria-hidden="true">02</div>
           <h3>Цена и сроки</h3>
-          <p>Согласование стоимости и сроков. Предоплата (50/50).</p>
+          <p><span>Согласование стоимости и&nbsp;сроков.</span> <span>Предоплата&nbsp;(50/50).</span></p>
         </li>
         <li class="step">
           <span class="ic"><svg aria-hidden="true"><use href="#i-pc"/></svg></span>
           <div class="n" aria-hidden="true">03</div>
           <h3>Разработка</h3>
-          <p>Проведение тестов. Внесение правок в процессе создания.</p>
+          <p><span>Проведение тестов.</span> <span>Внесение правок в&nbsp;процессе создания.</span></p>
         </li>
         <li class="step">
           <span class="ic"><svg aria-hidden="true"><use href="#i-rocket"/></svg></span>
           <div class="n" aria-hidden="true">04</div>
           <h3>Запуск</h3>
-          <p>Запуск проекта. Полноценная инструкция по управлению им.</p>
+          <p><span>Запуск проекта.</span> <span>Полноценная инструкция по&nbsp;управлению.</span></p>
         </li>
       </ol>
     </div>
